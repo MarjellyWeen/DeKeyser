@@ -25,11 +25,11 @@ header{
     color: white;
     box-shadow: 0 0 10px slategray;
 }
-table{
+/* table{
     float: left;
     position: absolute;
 
-}
+} */
 table, tr, th, td{
     border: black solid 1px;
 }
@@ -59,7 +59,7 @@ div{
     text-align: center;
 }
 
-input{
+.input{
     display: block;
     margin: 20px auto;
     text-align: center;
@@ -67,4 +67,8 @@ input{
     width: 240px;
     height: 30px;
     background-color:lightgray;
+}
+
+form{
+    border: black 2px solid;
 }

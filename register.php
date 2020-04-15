@@ -14,7 +14,7 @@ require_once 'includes/header.php';
 </div>
 <div class="row text-center justify-content-center">
     <div class="col">
-<form action="includes/register-inc.php" method="post">
+<form class="input" action="includes/register-inc.php" method="post">
     <input type="text" name="username" placeholder="Username">
     <input type="password" name="password" placeholder="Password">
     <input type="password" name="confirmPassword" placeholder="Confirm password">
