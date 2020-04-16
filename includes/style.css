@@ -32,6 +32,7 @@ header{
 } */
 table, tr, th, td{
     border: black solid 1px;
+    font-size: 13px;
 }
 ul{
     float: right;
