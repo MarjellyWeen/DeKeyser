@@ -10,11 +10,22 @@ require_once 'includes/database.php';
 
 $query = "SELECT * FROM contacts";
 $data = mysqli_query($conn, $query);
+$company_query = "SELECT * FROM companies";
+$company_data = mysqli_query($conn, $company_query);
+
+$options = "";
+
+while ($row1 = mysqli_fetch_array($company_data)){
+    $options = $options . "<option value='$row1[0]'>$row1[2] - $row1[0]</option>";
+}
+
 //    echo "<pre>";
 //    while ($result = mysqli_fetch_assoc($data)) {
 //        var_dump($result);
 //    };
 //    echo "</pre>";
+
+
 ?>
         </div>
     </div>
@@ -41,12 +52,12 @@ $data = mysqli_query($conn, $query);
             <div class="col no-gutters">
                 <h2>Add a new contact:</h2>
                 <form action="includes/manage_contacts.php" method="post">
-                    <!-- <label for="company_id">Company=</label>
-                    <select id="company_id" name="company_id" form="company_id">
-                        <option value="3">Vervoer de keyser</option>
-                        <option value="4">Paniflower</option> -->
 
-                        <input type="text" name="company_id" placeholder="company id">
+                <select id="company_id" name="company_id" form="company_id">
+                            <?php echo $options;?>
+                    </select>
+
+                        <!-- <input type="text" name="company_id" placeholder="company id"> -->
                         <input type="text" name="name" placeholder="name">
                         <input type="text" name="role" placeholder="role">
                         <input type="text" name="code" placeholder="code">
@@ -56,23 +67,6 @@ $data = mysqli_query($conn, $query);
             </div>
 
             <?php
-// $field_definitions_query = "SELECT * FROM shipments";
-
-// $field_definitions_data = mysqli_query($dbc, $field_definitions_query);
-
-// $field_definitions = array();
-
-// while ($row = mysqli_fetch_array($field_definitions_data)) {
-//   array_push($field_definitions, $row);
-// }
-// echo '<form enctype="multipart/form-data" method="post" action="' . $_SERVER['PHP_SELF'] . '">';
-
-// foreach ($field_definitions as $row) {
-//  echo '<label for="' . $row[field_name] . '">' . $row[field_desc] . ':</label>';
-//  echo '<input type="' . $row[field_type] . '" id="' . $row[field_name] . '" name="' . $row[field_name]. '" value="temp" /><br />';
-// }
-
-// echo '<input type="submit" value="Save" name="submit" /></form>';
 
 ?>
         </div>

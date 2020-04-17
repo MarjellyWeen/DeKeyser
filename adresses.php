@@ -9,12 +9,23 @@ require_once 'includes/database.php';
             <?php
 
 $query = "SELECT * FROM adresses";
+$company_query = "SELECT * FROM companies";
 $data = mysqli_query($conn, $query);
 //    echo "<pre>";
 //    while ($result = mysqli_fetch_assoc($data)) {
 //        var_dump($result);
 //    };
 //    echo "</pre>";
+$company_data = mysqli_query($conn, $company_query);
+
+
+
+$options = "";
+
+while ($row1 = mysqli_fetch_array($company_data)){
+    $options = $options . "<option value='$row1[0]'>$row1[2] - $row1[0]</option>";
+}
+
 ?>
         </div>
     </div>
@@ -45,8 +56,11 @@ $data = mysqli_query($conn, $query);
                     <select id="company_id" name="company_id" form="company_id">
                         <option value="3">Vervoer de keyser</option>
                         <option value="4">Paniflower</option> -->
+                        <select id="company_id" name="company_id" form="company_id">
+                            <?php echo $options;?>
+                    </select>
 
-                        <input type="text" name="company_id" placeholder="company id">
+                        <!-- <input type="text" name="company_id" placeholder="company id"> -->
                         <input type="text" name="adress" placeholder="adress">
                         <input type="text" name="type" placeholder="type">
 
