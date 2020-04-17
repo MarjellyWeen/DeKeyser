@@ -12,7 +12,7 @@ $contactlist = "http://localhost/paniflower/contacts.php";
 $query = "INSERT INTO `contacts` VALUES (NULL, '$company_id', '$name', '$role', '$code')";
 
 if (mysqli_query($conn, $query)){
-    echo "record toegevoegd";
+    echo "record toegevoegd <br>";
     echo "Back to the previous page <li><a href=$contactlist>Contacts list</a></li>";
 } else{
     echo mysqli_error($conn);

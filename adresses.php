@@ -8,7 +8,7 @@ require_once 'includes/database.php';
         <div class="col text-center justify-content-center">
             <?php
 
-$query = "SELECT * FROM contacts";
+$query = "SELECT * FROM adresses";
 $data = mysqli_query($conn, $query);
 //    echo "<pre>";
 //    while ($result = mysqli_fetch_assoc($data)) {
@@ -40,18 +40,17 @@ $data = mysqli_query($conn, $query);
             <?php endif; //count $data. ?>
             <div class="col no-gutters">
                 <h2>Add a new contact:</h2>
-                <form action="includes/manage_contacts.php" method="post">
+                <form action="includes/manage_adresses.php" method="post">
                     <!-- <label for="company_id">Company=</label>
                     <select id="company_id" name="company_id" form="company_id">
                         <option value="3">Vervoer de keyser</option>
                         <option value="4">Paniflower</option> -->
 
                         <input type="text" name="company_id" placeholder="company id">
-                        <input type="text" name="name" placeholder="name">
-                        <input type="text" name="role" placeholder="role">
-                        <input type="text" name="code" placeholder="code">
+                        <input type="text" name="adress" placeholder="adress">
+                        <input type="text" name="type" placeholder="type">
 
-                        <button class="btn btn-info" type="submit" name="submit">Add contact</button>
+                        <button class="btn btn-info" type="submit" name="submit">Add adress</button>
                 </form>
             </div>
 
